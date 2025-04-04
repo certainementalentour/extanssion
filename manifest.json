@@ -1,7 +1,21 @@
 {
+   "manifest_version": 3,
+   "name": "Ekçtantion",
+   "description": "skibidi sigma",
+   "version": "3.141592",
+   "version_name": "Bêta pi",
+   "default_locale": "fr",
+   "icons": {
+      "128": "assets/128x128.png"
+   },
+
+
+   "background": {
+      "service_worker": "background/background.js"
+   },
    "action": {
-      "default_icon": "assets/BP128x128.png",
-      "default_popup": "content/popup.html",
+      "default_icon": "assets/128x128.png",
+      "default_popup": "popup/popup.html",
       "icons": {
          "128": "icon128.png",
          "16": "icon16.png",
@@ -9,28 +23,51 @@
          "48": "icon48.png"
       }
    },
-   "background": {
-      "service_worker": "background/background.js"
-   },
+
+
    "content_scripts": [ {
-      "js": [ "injected/communicator.js" ],
-      "matches": [ "http://0312754a.index-education.net/pronote/*", "https://0312754a.index-education.net/pronote/*", "http://bp.okman65.xyz/*", "https://bp.okman65.xyz/*"],
+      "js": [ "null.js" ],
+      "matches": [
+         "http://0312754a.index-education.net/pronote/*",
+         "https://0312754a.index-education.net/pronote/*",
+         "http://bp.okman65.xyz/*",
+         "https://bp.okman65.xyz/*"
+      ],
       "run_at": "document_start"
-   } ],
-   "default_locale": "fr",
-   "description": "deskripssion",
-   "host_permissions": [ "http://0312754a.index-education.net/pronote/*", "https://0312754a.index-education.net/pronote/*", "http://bp.okman65.xyz/*", "https://bp.okman65.xyz/*"],
-   "icons": {
-      "128": "assets/128x128.png"
    },
-   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEArBR9aYq9uKSYBRBrbjef9r/6oEk4uUMG7ZfL9FfNZzVHOtE7q/l/Y3gbjZFuPP0TX8SF0Caw/BkBNNXVTXHv2h5i1Cn7wT8b0zpSmcG7Rjmi9DBKuN8rRiRQ35O9HvusgfK4yh6w9P92J8/UHKtoB98dIniYWBHDenNqdlGFutkMQS2Iu0oTAkpcHT49dXWh8idGyUmvayhbbzi1K3wtTQjsjahhHii6mDssra5gdzbuQldNlINfegZlvp1rz6ehJ2wDGgGP83Xr7ZzT7MsBCzMupjB06lYmOHdSIazCUimanyM/RXVzRSwjlhbxbFvJh9rLY5AuJUMzRElDOcJanwIDAQAB",
-   "manifest_version": 3,
-   "name": "Ekçtantion",
-   "permissions": [ "tabs", "storage", "webNavigation", "scripting" ],
-   "version": "0.1.9.9",
-   "version_name": "Bêta 0.1.9.9.666",
+   {
+      "js": ["educonnect/form.js"],
+      "matches": [
+         "https://educonnect.education.gouv.fr/idp/profile/SAML2/POST/SSO?execution=e1s2"
+      ],
+      "run_at": "document_start"  
+   }],
+
+
+   "host_permissions": [
+      "http://0312754a.index-education.net/pronote/*",
+      "https://0312754a.index-education.net/pronote/*",
+      "http://bp.okman65.xyz/*", "https://bp.okman65.xyz/*"
+   ],
+   "permissions": [
+      "tabs",
+      "storage",
+      "webNavigation",
+      "scripting"
+   ],
+
+
    "web_accessible_resources": [ {
-      "matches": [ "http://*/*", "https://*/*" ],
-      "resources": [ "injected/injected.js", "injected/bundle.css", "assets/name.png", "assets/white.png", "assets/icons/icon.css", "assets/icons/icon.woff2", "betterWindow/index.html", "betterWindow/main.js" ]
+      "matches": [ "http://*.index-education.net/*", "https://*.index-education.net/*" ],
+      "resources": [
+         "injected/injected.js",
+         "injected/bundle.css",
+         "assets/name.png",
+         "assets/white.png",
+         "assets/icons/icon.css",
+         "assets/icons/icon.woff2",
+         "betterWindow/index.html",
+         "betterWindow/main.js"
+      ]
    } ]
 }

@@ -38,9 +38,17 @@
    {
       "js": ["educonnect/form.js"],
       "matches": [
-         "https://educonnect.education.gouv.fr/idp/profile/SAML2/POST/SSO?execution=e1s2"
+         "https://educonnect.education.gouv.fr/idp/profile/SAML2/POST/SSO*"
       ],
-      "run_at": "document_start"  
+      "run_at": "document_idle"
+   },
+   {
+      "css": [ "pronote/pronote.css" ],
+      "matches": [
+         "http://0312754a.index-education.net/pronote/*",
+         "https://0312754a.index-education.net/pronote/*"
+      ],
+      "run_at": "document_end"
    }],
 
 
@@ -60,14 +68,10 @@
    "web_accessible_resources": [ {
       "matches": [ "http://*.index-education.net/*", "https://*.index-education.net/*" ],
       "resources": [
-         "injected/injected.js",
-         "injected/bundle.css",
          "assets/name.png",
          "assets/white.png",
          "assets/icons/icon.css",
-         "assets/icons/icon.woff2",
-         "betterWindow/index.html",
-         "betterWindow/main.js"
+         "assets/icons/icon.woff2"
       ]
    } ]
 }

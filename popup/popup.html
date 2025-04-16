@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,12 +13,12 @@
             width: 780px;
             height: 500px;
             overflow: hidden;
-            background-color: #8b0000;
+            background-color: #fff;
             padding: none;
         }
         video {
-            width: 100%;
-            height: 500px;
+            width: 10%;
+            height: 10%;
             margin: none;
         }
     </style>
@@ -28,7 +27,15 @@
     <h1>Bah alors</h1>
     <video src="./video.mp4" type="video/mp4" autoplay loop></video>
 
-<!--    <script type="text/javascript" src="./popup.js"></script> -->
-</body>
+    <h2>Configurer la date de naissance</h2>
+    <label for="jour">Jour:</label>
+    <input type="number" name="day" id="jour" placeholder="Jour" min="1" max="31"><br>
+    <label for="mois">Mois:</label>
+    <input type="number" name="month" id="mois" placeholder="Mois" min="1" max="12"><br>
+    <label for="annee">Année</label>
+    <input type="number" name="year" id="annee" placeholder="Année" min="1950" max="2100"><br>
+    <button id="saveDate">Enregistrer</button>
 
+    <script type="text/javascript" src="./popup.js"></script>
+</body>
 </html>

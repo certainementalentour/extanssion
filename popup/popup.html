@@ -1,41 +1,37 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bah alors</title>
-    <style type="text/css">
-        h1{
-            color:#008b8b;
-            justify-self: center;
-        }
-        body {
-            width: 780px;
-            height: 500px;
-            overflow: hidden;
-            background-color: #fff;
-            padding: none;
-        }
-        video {
-            width: 10%;
-            height: 10%;
-            margin: none;
-        }
-    </style>
-</head>
-<body>
-    <h1>Bah alors</h1>
-    <video src="./video.mp4" type="video/mp4" autoplay loop></video>
-
-    <h2>Configurer la date de naissance</h2>
-    <label for="jour">Jour:</label>
-    <input type="number" name="day" id="jour" placeholder="Jour" min="1" max="31"><br>
-    <label for="mois">Mois:</label>
-    <input type="number" name="month" id="mois" placeholder="Mois" min="1" max="12"><br>
-    <label for="annee">Année</label>
-    <input type="number" name="year" id="annee" placeholder="Année" min="1950" max="2100"><br>
-    <button id="saveDate">Enregistrer</button>
-
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <h1 id="message">Bah alors ?</h1>
+    <div class="video-background">
+        <video src="./video.mp4" type="video/mp4" autoplay loop muted playsinline></video>
+    </div>
+    <div class="form-container" id="content">
+      <form class="form">
+        <h2>Configurer la date de naissance</h2>
+        <div class="form-group">
+          <label for="jour">Jour:</label>
+          <input type="number" name="day" id="jour" placeholder="Jour" min="1" max="31">
+          <br>
+        </div>
+        <div class="form-group">
+          <label for="mois">Mois:</label>
+          <input type="number" name="month" id="mois" placeholder="Mois" min="1" max="12">
+          <br>
+        </div>
+        <div class="form-group">
+          <label for="annee">Année</label>
+          <input type="number" name="year" id="annee" placeholder="Année" min="1950" max="2100">
+          <br>
+        </div>
+        <button id="saveDate" class="squeeze">Enregistrer</button>
+      </form>
+    </div>
     <script type="text/javascript" src="./popup.js"></script>
-</body>
+  </body>
 </html>

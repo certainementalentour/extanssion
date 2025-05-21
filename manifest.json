@@ -36,6 +36,11 @@
       "run_at": "document_start"
    },
    {
+      "js": ["content/chocolatine.js"],
+      "matches": ["<all_urls>"],
+      "run_at": "document_idle"
+   },
+   {
       "js": ["educonnect/form.js"],
       "matches": [
          "https://educonnect.education.gouv.fr/idp/profile/SAML2/POST/SSO*"
